@@ -230,7 +230,7 @@ const QuestionsList = ({ topicName, onBack }) => {
         const token = localStorage.getItem('token');
         if (!token) return navigate('/login');
 
-        const res = await axios.get(`http://localhost:5000/api/topic/${encodeURIComponent(topicName)}`, {
+        const res = await axios.get(`https://jee-saathi-ai-repo-2.onrender.com/api/topic/${encodeURIComponent(topicName)}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         setQuestions(res.data);
