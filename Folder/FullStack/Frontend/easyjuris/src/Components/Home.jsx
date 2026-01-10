@@ -78,7 +78,7 @@ const Home = () => {
         const token = localStorage.getItem("token");
         
 
-        const response = await axios.get(`http://localhost:5000/api/getHomeData`, {
+        const response = await axios.get(`https://jee-saathi-ai-repo-2.onrender.com/api/getHomeData`, {
           headers: { Authorization: `Bearer ${token}` }
         });
        console.log("Home Data Response:", response.data);
