@@ -318,7 +318,7 @@ const Leaderboard = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-4 space-y-8">
-            {myData && (
+             {myData? (
               <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-white/10 rounded-[3rem] p-8 relative overflow-hidden shadow-2xl group hover:border-cyan-500/30 transition-all duration-500">
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
                   <ShieldCheck size={180} className="text-white" />
@@ -429,6 +429,19 @@ const Leaderboard = () => {
                   ))}
                 </div>
               </div>
+            ):(
+             
+
+  
+    <div>
+      <button onClick={handleManualUpdate} className="bg-blue-500 text-white p-2">
+        🔄 Demo: Force Update Leaderboard
+      </button>
+      
+      
+     
+    </div>
+ 
             )}
 
             {/* <ActivityHeatmap /> */}
