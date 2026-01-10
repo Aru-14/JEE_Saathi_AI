@@ -50,7 +50,7 @@ connectDB();
 // Initialize HTTP server + Socket.io
 const server = http.createServer(app);
 const io = new Server(server, { cors: {
-    origin: "https://jee-saathi-ai-repo.vercel.app/", // NO trailing slash
+    origin: "https://jee-saathi-ai-repo.vercel.app", // NO trailing slash
     methods: ["GET", "POST"],
     credentials: true
   },
