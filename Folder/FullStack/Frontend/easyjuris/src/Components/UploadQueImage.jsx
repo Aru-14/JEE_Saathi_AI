@@ -62,7 +62,7 @@ const UploadQueImage = () => {
     formData.append("correctAnswer", answer);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/uploadQueImage", formData, {
+      const response = await axios.post("https://jee-saathi-ai-repo-2.onrender.com/api/uploadQueImage", formData, {
         headers: { 
           "Content-Type": "multipart/form-data", 
           'Authorization': `Bearer ${token}` 
