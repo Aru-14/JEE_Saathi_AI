@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import LeaderBoard from "./LeaderBoard";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://jee-saathi-ai-repo-2.onrender.com/", {
   transports: ["polling", "websocket"],
 });
 
