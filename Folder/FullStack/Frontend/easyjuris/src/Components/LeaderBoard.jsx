@@ -156,14 +156,19 @@ const Leaderboard = () => {
   const [maxStreak, setMaxStreak] = useState(0);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+   const token = localStorage.getItem("token");
+        const config = { headers: { Authorization: `Bearer ${token}` } };
+  
   const currentUserId = localStorage.getItem("userId");
+const handleManualUpdate = async () => {
+    axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/updateLeaderBoard",config); // Refresh the UI after update
+  };
 
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
         setLoading(true);
-        const token = localStorage.getItem("token");
-        const config = { headers: { Authorization: `Bearer ${token}` } };
+       
         const [toppersRes, streakRes] = await Promise.all([
           axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/toppers", config),
           axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/getUserMaxStreak", config),
