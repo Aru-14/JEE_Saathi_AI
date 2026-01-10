@@ -35,7 +35,7 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Upload/>} />
+        {/* <Route path="/" element={<Upload/>} /> */}
  
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -43,7 +43,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/Practice" element={<LeaderBoardInterface />} />
         <Route path="/LeaderBoard" element={<LeaderBoard />} />
-        <Route path="/enter" element={<Enter />} />
+        <Route path="/" element={<Enter />} />
         <Route path="/uploadQueImage" element={<UploadQueImage />} />
       
         <Route path="/solveQuestion/:id" element={<SolveQuestion />} />
