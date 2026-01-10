@@ -13,7 +13,9 @@ const socket = io("https://jee-saathi-ai-repo-2.onrender.com", {
   withCredentials: true
 });
 
-function Chat({ userId }) {
+function Chat() {
+    const userId = localStorage.getItem("username");
+
   const [newRoomName, setNewRoomName] = useState("");
   const [newRoomType, setNewRoomType] = useState("personal");
   const [newUserId, setNewUserId] = useState(userId);
