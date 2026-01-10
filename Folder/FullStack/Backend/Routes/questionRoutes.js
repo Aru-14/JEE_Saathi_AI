@@ -506,9 +506,33 @@ router.get('/getHomeData', authMiddleware, async (req,res) => {
 
   try{
     const user=await User.findById(userId);
-    const dailyLeaderBoard=await DailyLeaderBoard.findOne({});
-    // console.log(dailyLeaderBoard);
-    const Ranking=dailyLeaderBoard.Rankings;
+      const result = await DailyLeaderBoard.aggregate([
+    {
+      // 1. Create a temporary field 'rankingsCount' representing the size of the array
+      $addFields: {
+        rankingsCount: { $size: "$Rankings" }
+      }
+    },
+    {
+      // 2. Sort documents by that count in descending order (highest first)
+      $sort: { rankingsCount: -1 }
+    },
+    {
+      // 3. Take only the top document
+      $limit: 1
+    }
+  ]);
+
+  // aggregate always returns an array, so we check the first element
+  const latestLeaderboard = result[0];
+
+  if (!latestLeaderboard) {
+    return res.status(404).json({ message: "No leaderboard data found." });
+  }
+
+  // 2. Return the rankings from the most recent entry
+
+    const Ranking=latestLeaderboard.Rankings;
     // console.log(Ranking);
     const userRankObj=Ranking.find(r=>r.userId.toString()===userId);
     let rank=userRankObj ? userRankObj.rank : null;
