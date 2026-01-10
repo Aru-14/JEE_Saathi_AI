@@ -8,7 +8,7 @@ import {
 import LeaderBoard from "./LeaderBoard";
 
 const socket = io("https://jee-saathi-ai-repo-2.onrender.com", {
-  transports: ["polling", "websocket"],
+  transports: [ "websocket"],
 });
 
 function Chat({ userId }) {
