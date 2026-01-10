@@ -11,6 +11,8 @@ const auth = require('../MiddleWares/auth');
 const multer = require('multer');
 const axios = require('axios');
 const Groq = require("groq-sdk");
+const nightlyBatch=require('../cron/nightBatch')
+
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 const upload = multer({ storage: multer.memoryStorage() }); // Keep in RAM temporarily
 dotenv.config();
@@ -450,9 +452,33 @@ router.get('/question/:id',authMiddleware, async (req, res) => {
 router.get('/toppers',authMiddleware, async (req, res) => {
 
  try{
- const TopperList=await DailyLeaderBoard.findOne({})
- console.log(TopperList.Rankings)
-  res.json(TopperList.Rankings)
+  const result = await DailyLeaderBoard.aggregate([
+    {
+      // 1. Create a temporary field 'rankingsCount' representing the size of the array
+      $addFields: {
+        rankingsCount: { $size: "$Rankings" }
+      }
+    },
+    {
+      // 2. Sort documents by that count in descending order (highest first)
+      $sort: { rankingsCount: -1 }
+    },
+    {
+      // 3. Take only the top document
+      $limit: 1
+    }
+  ]);
+
+  // aggregate always returns an array, so we check the first element
+  const latestLeaderboard = result[0];
+
+  if (!latestLeaderboard) {
+    return res.status(404).json({ message: "No leaderboard data found." });
+  }
+
+  // 2. Return the rankings from the most recent entry
+  console.log("Latest Rankings:", latestLeaderboard.Rankings);
+  res.json(latestLeaderboard.Rankings);
  }
  catch(err){
   res.json("error",err)
@@ -621,5 +647,16 @@ console.log("Pollinations API Key Loaded:", POLLINATIONS_API_KEY);
     // If it fails, send a JSON error instead of an HTML page
     res.status(500).json({ error: "Failed to generate image",err: error.message  });
   }
+});
+router.get('/updateLeaderBoard',authMiddleware, async (req, res) => {
+
+ try {    
+  nightlyBatch();
+  res.json("Leaderboard Update Triggered");
+  }
+  catch(err){
+
+    res.json("error",err)
+  } 
 });
 module.exports = router;
