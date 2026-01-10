@@ -320,7 +320,7 @@ const LeaderBoardInterface = () => {
         const token = localStorage.getItem("token");
         if (!token) { navigate("/login"); return; }
         
-        const res = await axios.get("http://localhost:5000/api/user-progress-summary", {
+        const res = await axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/user-progress-summary", {
           headers: { Authorization: `Bearer ${token}` },
         });
         
