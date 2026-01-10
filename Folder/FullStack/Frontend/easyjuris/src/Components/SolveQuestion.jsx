@@ -291,7 +291,7 @@ useEffect(() => {
     if (!prompt) return;
     try {
         const userToken = localStorage.getItem('token'); 
-        const response = await fetch(`http://localhost:5000/api/diagram?prompt=${encodeURIComponent(prompt)}`, {
+        const response = await fetch(`https://jee-saathi-ai-repo-2.onrender.com/api/diagram?prompt=${encodeURIComponent(prompt)}`, {
             headers: { 'Authorization': `Bearer ${userToken}` }
         });
         console.log("Fetch response:", response);
@@ -335,7 +335,7 @@ useEffect(() => {
     
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/submit', {
+      const res = await axios.post('https://jee-saathi-ai-repo-2.onrender.com/api/submit', {
         questionId: question._id,
         selectedOption: selectedOption 
       }, {
