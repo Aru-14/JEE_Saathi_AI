@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for the complex background effects */
+        .bubble-container {
+            /* Set the container to use a transparent background */
+            background-color: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(5px); /* Optional: Blurs the content behind the div */
+            position: relative;
+            overflow: hidden; /* Important to keep pseudo-elements within bounds */
+        }
+
+        /* Base styles for the "bubbles" effect using a pseudo-element */
+        .bubble-container::before,
+        .bubble-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%; /* Makes them circular */
+            filter: blur(80px); /* Massive blur for the "blurry shadow" effect */
+            z-index: 0; /* Ensures they stay in the background */
+            opacity: 0.8; /* Slight transparency */
+            animation: staticBubbles 30s infinite alternate; /* Gentle, slow movement */
+        }
+
+        /* Define the first large, vibrant bubble */
+        .bubble-container::before {
+            /* Position, size, and vibrant color */
+            top: -100px;
+            left: -150px;
+            width: 300px;
+            height: 300px;
+            background-color: #f59e0b; /* Amber */
+            box-shadow: 0 0 150px #f59e0b; /* Fluorescent glow */
+            /* Custom offset for this bubble's animation */
+            animation-delay: 0s; 
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Define the second large, vibrant bubble */
+        .bubble-container::after {
+            /* Position, size, and different vibrant color */
+            bottom: -100px;
+            right: -150px;
+            width: 350px;
+            height: 350px;
+            background-color: #3b82f6; /* Blue */
+            box-shadow: 0 0 150px #3b82f6; /* Fluorescent glow */
+            /* Custom offset for this bubble's animation */
+            animation-delay: 5s; 
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Keyframes for the slow, "static" bubble movement */
+        @keyframes staticBubbles {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                /* Move slightly and change size for a breathing effect */
+                transform: translate(50px, -50px) scale(1.1); 
+            }
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        /* Add more bubbles using custom classes for more complexity */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.6;
+            z-index: 0;
+            animation: staticBubbles 40s infinite alternate;
+        }
+
+        /* Specific bubble styles (e.g., green one) */
+        .bubble.green-bubble {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            left: 80%;
+            background-color: #10b981; /* Emerald */
+            box-shadow: 0 0 100px #10b981;
+            animation-delay: 10s;
+        }
+        
+        /* Specific bubble styles (e.g., pink one) */
+        .bubble.pink-bubble {
+            width: 200px;
+            height: 200px;
+            bottom: 10%;
+            left: 10%;
+            background-color: #ec4899; /* Pink */
+            box-shadow: 0 0 100px #ec4899;
+            animation-delay: 15s;
+        }
+
+    </style>
+
+  </head>
+  <body style="background: linear-gradient(135deg, #0f172a 0%, #083344 100%); background-size: cover;background-attachment: fixed;text-align: center;">
+    <div id="root" ></div>
+  
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
