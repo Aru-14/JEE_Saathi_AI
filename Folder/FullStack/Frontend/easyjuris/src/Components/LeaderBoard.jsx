@@ -165,8 +165,8 @@ const Leaderboard = () => {
         const token = localStorage.getItem("token");
         const config = { headers: { Authorization: `Bearer ${token}` } };
         const [toppersRes, streakRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/toppers", config),
-          axios.get("http://localhost:5000/api/getUserMaxStreak", config),
+          axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/toppers", config),
+          axios.get("https://jee-saathi-ai-repo-2.onrender.com/api/getUserMaxStreak", config),
         ]);
         setMaxStreak(streakRes.data || 0);
         const allRankings = toppersRes.data || [];
