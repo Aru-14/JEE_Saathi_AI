@@ -248,7 +248,7 @@ const [content,setContent]=useState("");
       try {
         setLoading(true);
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:5000/api/question/${id}`, {
+        const res = await axios.get(`https://jee-saathi-ai-repo-2.onrender.com/api/question/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
 
