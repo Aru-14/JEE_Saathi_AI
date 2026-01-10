@@ -57,7 +57,7 @@ function Chat({ userId }) {
   const inviteFriend = async () => {
     if (!friendId || !inviteRoomName) return;
     try {
-      const res = await fetch(`http://localhost:5000/invite`, {
+      const res = await fetch(`https://jee-saathi-ai-repo-2.onrender.com/invite`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ roomName: inviteRoomName, friendId }),
@@ -73,7 +73,7 @@ function Chat({ userId }) {
   const createRoom = async () => {
     if (!newRoomName || !newRoomType || !newUserId) return;
     try {
-      const res = await fetch("http://localhost:5000/CreateRoom", {
+      const res = await fetch("https://jee-saathi-ai-repo-2.onrender.com/CreateRoom", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: newRoomName, type: newRoomType, userId: newUserId }),
