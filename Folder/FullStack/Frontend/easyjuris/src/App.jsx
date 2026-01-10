@@ -50,7 +50,7 @@ function App() {
         <Route path="/askAI" element={<AskAI />} />
        
         <Route path="/questions/:topicName" element={<QuestionListWrapper />} />
-        <Route path="/ChatRoom" element={<Chat userId={localStorage.getItem("username")} />} />
+        <Route path="/ChatRoom" element={<Chat  />} />
        <Route path="/ClauseByClauseExplanation/:fileID" element={<ClauseByClauseExplanation />} />
       </Routes>
       </BrowserRouter>
