@@ -47,7 +47,10 @@ To train for the actual exam’s negative marking:
 * **Database:** MongoDB Atlas (User Profiles), ChromaDB (Vector Intelligence).
 * **Models:** Llama 3.3 70B, Gemini 1.5 Flash, Flux.
 
-## Folder Structure
+
+## Repository Structure
+
+```text
 ├── FullStack/
 │   ├── backend/
 │   │   ├── MiddleWares/    # Authentication and authorization guards
@@ -68,6 +71,5 @@ To train for the actual exam’s negative marking:
         └── notebook/
             ├── chroma_db/  # Persistent vector database storing book embeddings
             └── server2.py  # Dedicated microserver handling RAG-specific requests
+```
 
-
-##
