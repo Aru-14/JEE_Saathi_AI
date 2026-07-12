@@ -1,4 +1,4 @@
-# 🧠 JEE Saathi AI: A Cognitive Mentor for JEE Aspirants
+# 🧠 JEE Saathi AI: AI-Powered Platform for JEE Aspirants
 
 ## Full Detailed Demo Video Link : [https://youtu.be/TATIbj_ePuo]
 
