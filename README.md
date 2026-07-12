@@ -47,4 +47,27 @@ To train for the actual exam’s negative marking:
 * **Database:** MongoDB Atlas (User Profiles), ChromaDB (Vector Intelligence).
 * **Models:** Llama 3.3 70B, Gemini 1.5 Flash, Flux.
 
+## Folder Structure
+├── FullStack/
+│   ├── backend/
+│   │   ├── MiddleWares/    # Authentication and authorization guards
+│   │   ├── Models/         # Database schemas and object models
+│   │   ├── Routes/         # Modularized API routing endpoints
+│   │   ├── Services/       # Core business logic and general request handlers
+│   │   └── index.js        # Main server entry point (handles non-RAG requests)
+│   │
+│   └── Frontend/
+│       └── easyjuris/      # Client-side application root
+│           └── src/
+│               ├── Components/ # Frontend web pages, views, and UI layouts
+│               └── main.jsx    # Core entry point to render the frontend application
+│
+└── RAG/
+    └── JEESaathiAI/        # RAG Pipeline & AI Workspace
+        ├── books_markdown/ # Source PDF textbooks converted into Markdown format
+        └── notebook/
+            ├── chroma_db/  # Persistent vector database storing book embeddings
+            └── server2.py  # Dedicated microserver handling RAG-specific requests
 
+
+##
