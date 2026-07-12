@@ -1,4 +1,4 @@
-# 🧠 JEE Saathi AI: AI-Powered Platform for JEE Aspirants
+# JEE Saathi AI: AI-Powered Platform for JEE Aspirants
 
 ## Full Detailed Demo Video Link : [https://youtu.be/TATIbj_ePuo]
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 The Mission
+## The Mission
 IIT-JEE preparation is often a luxury. **JEE Saathi AI** moves beyond "PDF reading" to create an automated tutor that enforces discipline and factual accuracy through:
 * **Factual Rigor:** Hallucination-free retrieval grounded in verified textbooks and 2025 exam papers.
 * **Enforced Balance:** Mathematical algorithms that prevent students from neglecting weak subjects.
@@ -14,7 +14,7 @@ IIT-JEE preparation is often a luxury. **JEE Saathi AI** moves beyond "PDF readi
 
 ---
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 The system uses a **Decoupled Dual-Service Architecture** to ensure high performance and scalability.
 
 ### 1. AI Orchestration (FastAPI)
@@ -28,7 +28,7 @@ The system uses a **Decoupled Dual-Service Architecture** to ensure high perform
 
 ---
 
-## 🎮 Behavioral Engineering
+## Behavioral Engineering
 ### The Balanced Score (Geometric Mean)
 To ensure students maintain equilibrium across Physics, Chemistry, and Maths, we implement a scoring system that penalizes subject bias.
 $$Score = \sqrt[3]{P \cdot C \cdot M}$$
@@ -41,11 +41,10 @@ To train for the actual exam’s negative marking:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Frontend:** React.js, Tailwind CSS, KaTeX (for pixel-perfect math rendering).
 * **Backend:** Node.js, Express, FastAPI (Python).
 * **Database:** MongoDB Atlas (User Profiles), ChromaDB (Vector Intelligence).
 * **Models:** Llama 3.3 70B, Gemini 1.5 Flash, Flux.
 
----
-© 2026 Arunima Paunikar | JEE Saathi AI
+
