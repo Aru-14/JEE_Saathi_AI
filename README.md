@@ -73,3 +73,65 @@ To train for the actual exam’s negative marking:
             └── server2.py  # Dedicated microserver handling RAG-specific requests
 ```
 
+## Getting Started & Installation
+Follow these steps to clone the repository, run the application servers, and spin up the frontend interface.
+
+# 1. Clone the Repository
+Open your terminal and run the following commands to clone the project and navigate into the main directory:
+
+```
+# Clone this project
+git clone [https://github.com/Aru-14/JEE_Saathi_AI.git](https://github.com/Aru-14/JEE_Saathi_AI.git)
+
+# Enter into the project root directory
+cd Folder
+
+```
+
+# 2. Start the Backend Servers
+This project runs on a split-server architecture. You must open separate terminal tabs or windows to execute both microservers concurrently.
+
+# i. Node.js Server
+Manages database states, general API endpoints, and authentication routing.
+
+```
+cd FullStack/backend
+
+# Install server-side dependencies
+npm install
+
+# Start the Node execution loop
+npm run start
+
+```
+
+# ii. Python RAG Vector Server
+Handles semantic search queries, vector database retrievals, and language model parsing.
+
+```
+cd RAG/JEESaathiAI/notebook
+
+# Install all the requirements
+pip install -r requirements.txt
+
+# Verify your python context environment is configured, then run:
+python server2.py
+
+```
+
+# 3. Run the Frontend Client Application
+Launches the UI dashboard.
+
+```
+cd FullStack/Frontend/easyjuris
+
+# Install client-side dependencies
+npm install
+
+# Boot the local Vite client development build
+npm run dev
+
+```
+
+
+
