@@ -47,6 +47,7 @@ To train for the actual exam’s negative marking:
 * **Database:** MongoDB Atlas (User Profiles), ChromaDB (Vector Intelligence).
 * **Models:** Llama 3.3 70B, Gemini 1.5 Flash, Flux.
 
+--- 
 
 ## Repository Structure
 
@@ -73,7 +74,7 @@ To train for the actual exam’s negative marking:
             └── server2.py  # Dedicated microserver handling RAG-specific requests
 ```
 
-
+---
 
 # Getting Started & Installation
 Follow these steps to clone the repository, run the application servers, and spin up the frontend interface.
@@ -135,5 +136,7 @@ npm run dev
 
 ```
 
+---
 
+## Made with ❤️ by Arunima Paunikar 
 
