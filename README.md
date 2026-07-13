@@ -73,10 +73,10 @@ To train for the actual exam’s negative marking:
             └── server2.py  # Dedicated microserver handling RAG-specific requests
 ```
 
-## Getting Started & Installation
+# Getting Started & Installation
 Follow these steps to clone the repository, run the application servers, and spin up the frontend interface.
 
-# 1. Clone the Repository
+## 1. Clone the Repository
 Open your terminal and run the following commands to clone the project and navigate into the main directory:
 
 ```
@@ -88,10 +88,10 @@ cd Folder
 
 ```
 
-# 2. Start the Backend Servers
+## 2. Start the Backend Servers
 This project runs on a split-server architecture. You must open separate terminal tabs or windows to execute both microservers concurrently.
 
-# i. Node.js Server
+## i. Node.js Server
 Manages database states, general API endpoints, and authentication routing.
 
 ```
@@ -105,7 +105,7 @@ npm run start
 
 ```
 
-# ii. Python RAG Vector Server
+## ii. Python RAG Vector Server
 Handles semantic search queries, vector database retrievals, and language model parsing.
 
 ```
@@ -119,7 +119,7 @@ python server2.py
 
 ```
 
-# 3. Run the Frontend Client Application
+## 3. Run the Frontend Client Application
 Launches the UI dashboard.
 
 ```
